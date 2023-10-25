@@ -28,14 +28,6 @@ public class EnseignantController {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    /**
-     * Ajouter un nouveau professeur
-     */
-    @PostMapping(value = "/addEnseignant")
-    public AjaxResult addEnseignant(@RequestBody Enseignant enseignant) {
-        EnseignantDao.save(enseignant);
-        log.info("【Enseignant】= {}", JSONUtil.toJsonStr(enseignant));
-        return AjaxResult.success(enseignant);
-    }
+
 
 }
