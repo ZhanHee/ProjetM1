@@ -1,64 +1,85 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
 
 @Data
-@Document(value = "enseignant")
+@ToString
+@Accessors(chain = true)
+@Document(value = "Enseignant")
 public class Enseignant {
     /**
      * clé primaire
      */
-    private Integer id;
+    @MongoId
+    private ObjectId id;
     /**
      *Nom
      */
+    @Field("FirstName")
     private String first_name;
     /**
      *Prénom
      */
+    @Field("LastName")
     private String last_name;
     /**
      * date de naissance
      */
+    @JsonFormat(pattern= "dd-mm-yyyy",timezone = "GMT+2")
+    @Field("DateOfBirth")
     private Date date_of_birth;
     /**
      *contact
      */
+    @Field("contact")
     private Contact contact;
     /**
      * adress
      */
+    @Field("adresse")
     private Adresse adresse;
     /**
      * series of experience professionalise
      */
-    private int experience_professionelle_id;
+    @Field("experience professionelle_ids")
+    private ObjectId experience_professionelle_id;
     /**
      * series of publications
      */
-    private int publication_id;
+    @Field("publication_ids")
+    private ObjectId publication_id;
     /**
      * series of awards
      */
-    private int awards_id;
+    @Field("awards_ids")
+    private ObjectId awards_id;
     /**
      * series of education activites
      */
-    private int education_activites_id;
+    @Field("education_activites_ids")
+    private ObjectId education_activites_id;
     /**
      * series of scentific activites
      */
-    private int scentific_activites_id;
+    @Field("scentific_activities_ids")
+    private ObjectId scentific_activites_id;
     /**
      * series of program of research
      */
-    private int program_of_research_id;
+    @Field("programm_of_research_ids")
+    private ObjectId program_of_research_id;
     /**
      * series of educations
      */
-    private int education_id;
+    @Field("education_ids")
+    private ObjectId education_id;
 }

@@ -31,7 +31,7 @@ public class MongoTestDao {
      */
     public MongoTest findTestByName(String name) {
         Query query=new Query(Criteria.where("name").is(name));
-        MongoTest mgt =  mongoTemplate.findOne(query , MongoTest.class);
+        MongoTest mgt =  mongoTemplate.findOne(query , MongoTest.class, "mongoTest");
         return mgt;
     }
 

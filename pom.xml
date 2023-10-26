@@ -51,6 +51,11 @@
             <artifactId>hutool-all</artifactId>
             <version>5.7.4</version> <!-- 请使用最新版本 -->
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>4.1.5</version>
+        </dependency>
     </dependencies>
 
     <build>

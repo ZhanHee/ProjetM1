@@ -1,18 +1,26 @@
 package com.example.demo.model;
 
 import com.example.demo.constant.Level;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
 
 @Data
+@ToString
+@Accessors(chain = true)
 @Document(value = "education_activites")
 public class EducationActivity {
     /**
      * clé primaire
      */
-    private int id;
+    @MongoId
+    private ObjectId id;
     /**
      * Name of student
      */
@@ -24,10 +32,12 @@ public class EducationActivity {
     /**
      * Date Debut
      */
+    @JsonFormat( pattern ="dd-mm-yyyy", timezone ="GMT+2")
     private Date date_debut;
     /**
      * Date Fin
      */
+    @JsonFormat( pattern ="dd-mm-yyyy", timezone ="GMT+2")
     private Date date_fin;
     /**
      * Recherché topic

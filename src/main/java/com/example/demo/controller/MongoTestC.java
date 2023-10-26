@@ -27,7 +27,7 @@ public class MongoTestC {
         mtdao.saveTest(mgtest);
     }
 
-    @GetMapping(value="/test2/{name}")
+    @GetMapping("/test2/{name}")
     public MongoTest findTestByName(@PathVariable String name){
         MongoTest mgtest= mtdao.findTestByName(name);
         System.out.println("mgtest is "+mgtest);

@@ -1,10 +1,13 @@
 package com.example.demo.model;
 
 import lombok.Data;
+import lombok.ToString;
+import lombok.experimental.Accessors;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(value = "adresss")
+@ToString
+@Accessors(chain = true)
 public class Adresse {
     /**
      * Road
