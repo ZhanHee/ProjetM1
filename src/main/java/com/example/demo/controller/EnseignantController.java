@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dao.EnseignantDao;
 import com.example.demo.model.Enseignant;
+import com.example.demo.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController
+@CrossOrigin
 @RequestMapping("/enseignant")
 public class EnseignantController {
 
@@ -28,32 +30,32 @@ public class EnseignantController {
 
 
     @GetMapping("/findAll")
-    public List<Enseignant> findAll(){
+    public Result<List<Enseignant>> findAll(){
         List<Enseignant> list= endao.findAll();
         System.out.println("输出");
-        return list;
+        return Result.success(list);
     }
 
     @GetMapping("/firstname/{first_name}")
-    public Enseignant findEnseignantByFirstName(@PathVariable String first_name){
+    public Result<Enseignant> findEnseignantByFirstName(@PathVariable String first_name){
         Enseignant enseignant= endao.findEnseignantByFirstName(first_name);
         System.out.println("enseignant is "+enseignant);
-        return enseignant;
+        return Result.success(enseignant);
     }
 
     @GetMapping("/lastname/{last_name}")
-    public Enseignant findEnseignantByLastName(@PathVariable String last_name){
+    public Result<Enseignant> findEnseignantByLastName(@PathVariable String last_name){
         Enseignant enseignant= endao.findEnseignantByLastName(last_name);
         System.out.println("enseignant is "+enseignant);
         log.info("用户信息：{}", enseignant);
-        return enseignant;
+        return Result.success(enseignant);
     }
 
     @GetMapping("/id/{_id}")
-    public Enseignant findEnseignantById(@PathVariable String id){
+    public Result<Enseignant> findEnseignantById(@PathVariable String id){
         Enseignant enseignant= endao.findEnseignantById(id);
         System.out.println("enseignant is "+enseignant);
-        return enseignant;
+        return Result.success(enseignant);
     }
 
 

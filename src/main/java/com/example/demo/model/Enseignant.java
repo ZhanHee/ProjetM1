@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Data
@@ -51,35 +52,35 @@ public class Enseignant {
      * series of experience professionalise
      */
     @Field("experience professionelle_ids")
-    private ObjectId experience_professionelle_id;
+    private ArrayList<ObjectId> experience_professionelle_id;
     /**
      * series of publications
      */
     @Field("publication_ids")
-    private ObjectId publication_id;
+    private ArrayList<ObjectId> publication_id;
     /**
      * series of awards
      */
     @Field("awards_ids")
-    private ObjectId awards_id;
+    private ArrayList<ObjectId> awards_id;
     /**
      * series of education activites
      */
     @Field("education_activites_ids")
-    private ObjectId education_activites_id;
+    private ArrayList<ObjectId> education_activites_id;
     /**
      * series of scentific activites
      */
     @Field("scentific_activities_ids")
-    private ObjectId scentific_activites_id;
+    private ArrayList<ObjectId> scentific_activites_id;
     /**
      * series of program of research
      */
     @Field("programm_of_research_ids")
-    private ObjectId program_of_research_id;
+    private ArrayList<ObjectId> program_of_research_id;
     /**
      * series of educations
      */
     @Field("education_ids")
-    private ObjectId education_id;
+    private ArrayList<ObjectId> education_id;
 }
