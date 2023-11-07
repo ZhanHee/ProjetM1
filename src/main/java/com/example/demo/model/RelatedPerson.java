@@ -5,6 +5,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Data
@@ -20,9 +21,11 @@ public class RelatedPerson {
     /**
      * Name of Related People
      */
+    @Field("name of related people")
     private String name;
     /**
      * Description
      */
+    @Field("description")
     private String description;
 }

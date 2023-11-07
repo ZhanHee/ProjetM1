@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.EnseignantDao;
+import com.example.demo.dao.ExportPDF;
 import com.example.demo.model.Enseignant;
 import com.example.demo.util.Result;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +29,9 @@ public class EnseignantController {
 
     @Autowired
     private EnseignantDao endao;
+
+    @Autowired
+    private ExportPDF exportPDF;
 
 
     @GetMapping("/findAll")
@@ -59,4 +64,8 @@ public class EnseignantController {
     }
 
 
+    @GetMapping("/export")
+    public void export(HttpServletResponse response){
+        return ;
+    }
 }

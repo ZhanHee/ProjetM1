@@ -7,6 +7,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
@@ -25,13 +26,16 @@ public class Award {
      * Date
      */
     @JsonFormat( pattern ="dd-mm-yyyy", timezone ="GMT+2")
+    @Field("Date")
     private Date date;
     /**
      * Name of awards
      */
+    @Field("Name of awards")
     private String name_award;
     /**
      * Description
      */
+    @Field("Description of awards")
     private String description;
 }
