@@ -51,7 +51,7 @@ public class Enseignant {
     /**
      * series of experience professionalise
      */
-    @Field("experience_professionelle_ids")
+    @Field("experience professionelle_ids")
     private ArrayList<ObjectId> experience_professionelle_id;
     /**
      * series of publications
