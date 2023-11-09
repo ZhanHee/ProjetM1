@@ -24,9 +24,11 @@ public class EnseignantDao {
 
     public List<Enseignant> findAll() {
         // 执行查询集合中全部文档信息
-        List<Enseignant> documentList = mongoTemplate.findAll(Enseignant.class, CollectionNames.ENSEIGNANT);
-        // 输出结果
-        for (Enseignant enseignant : documentList) {
+        List<Enseignant> enseignantList = mongoTemplate.findAll(Enseignant.class, CollectionNames.ENSEIGNANT);
+
+
+        // 打印输出结果
+        for (Enseignant enseignant : enseignantList) {
             log.info("用户信息：{}", enseignant);
         }
         return documentList;

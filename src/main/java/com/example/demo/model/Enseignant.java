@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.Accessors;
@@ -15,6 +16,7 @@ import java.util.Date;
 @Data
 @ToString
 @Accessors(chain = true)
+@Builder
 @Document(value = "Enseignant")
 public class Enseignant {
     /**

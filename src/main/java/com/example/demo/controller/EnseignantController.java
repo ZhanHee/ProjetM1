@@ -30,10 +30,6 @@ public class EnseignantController {
     @Autowired
     private EnseignantDao endao;
 
-    @Autowired
-    private ExportPDF exportPDF;
-
-
     @GetMapping("/findAll")
     public Result<List<Enseignant>> findAll(){
         List<Enseignant> list= endao.findAll();
